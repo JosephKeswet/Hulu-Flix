@@ -1,0 +1,74 @@
+.banner{
+    position: relative;
+    /* height: 600px; */
+    object-fit: contain;
+    background-color: black;
+}
+
+.movie__banner{
+    height: 30rem;
+
+}
+
+.banner__contents{
+    display: flex;
+    padding-top: 10rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-bottom: 2rem;
+    color: white;
+   
+
+}
+
+/* .movie__contents{
+    margin-left: 3rem;
+} */
+.movie__contents h1{
+    font-size: 5rem;
+    margin-bottom: 2rem;
+    font-weight: 900;
+}
+
+.movie__contents p{
+    text-overflow: ellipsis;
+    padding-bottom: 1rem;
+    font-weight: 900;
+}
+.description{
+    margin-bottom: 2rem;
+    max-width: 40rem;
+    max-height: 2rem;
+    /* color: black; */
+    font-weight: bolder;
+}
+.trailerButton{
+    cursor: pointer;
+    color: white;
+    outline: none;
+    border: none;
+    font-weight: 700;
+    /* border-radius: 0.2vw; */
+    padding-left: 2rem;
+    padding-right: 2rem;
+    margin-right: 1rem;
+    padding-top: 0.5rem;
+    /* background-color: rgba(51, 51, 51, 0.5); */
+    background-color: black;
+    padding-bottom: 0.5rem;
+    border-radius: 8px;
+}
+.trailerButton:hover{
+    background-color:#e6e6e6;
+    color: black;
+}
+
+.banner--fadeBottom{
+    height: 3.7rem;
+    background-image: linear-gradient(
+        180deg,
+        transparent,
+        rgba(37,37,37,0.61),
+        #111
+    );
+}

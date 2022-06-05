@@ -1,0 +1,17 @@
+.movie__posters{
+    margin-left: 3rem;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.movie__posters img{
+    padding: 1.3rem;
+    width: 21rem;
+    height: 30rem;
+    transition: all 350ms ease-in-out;
+}
+
+.movie__posters img:hover{
+    transform: scale(1.08);
+    cursor: pointer;
+}
