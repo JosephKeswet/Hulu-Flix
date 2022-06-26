@@ -1,17 +1,43 @@
+/* .movie__posters{ */
+    /* display: flex; */
+    /* max-width: 21rem; */
+    /* justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 70px;
+    padding: 1rem;
+    max-height: 40rem; */
+   /* flex-basis: 25%; */
+
+/* } */
 .movie__posters{
-    margin-left: 3rem;
+    padding-bottom: 3rem;
+}
+.card__container{
     display: flex;
     flex-wrap: wrap;
+    margin-left: 2.4rem;
+}
+
+
+.movie__posters h1{
+    font-family: cursive;
+ color:white;
+    max-width: 21rem;
+    padding-left: 2rem;
 }
 
 .movie__posters img{
-    padding: 1.3rem;
+    padding-left: 1.7rem;
     width: 21rem;
     height: 30rem;
+    border: 1px solid transparent;
+    cursor: pointer;
     transition: all 350ms ease-in-out;
 }
 
-.movie__posters img:hover{
+.movie__posters:hover{
     transform: scale(1.08);
     cursor: pointer;
 }
+

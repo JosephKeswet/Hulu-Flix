@@ -3,25 +3,50 @@ import './Banner.css'
 import { faClock ,faClosedCaptioning} from "@fortawesome/free-regular-svg-icons";
 import { faCircle,faPlay } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useState } from "react";
+import { useEffect } from "react";
 
 
-const Banner = () => {
+const Banner = ({backdrop_path}) => {
+  const [movie,setMovie] = useState([])
+  const IMG_API = "https://image.tmdb.org/t/p/original";
+
+  useEffect(() =>{
+    fetch("https://api.themoviedb.org/3/movie/top_rated?api_key=aeb882da259154a084d8a04be9e5462f&language=en-US&page=1")
+    .then((res) => (
+      res.json()
+    ))
+    .then((data) => {
+      console.log(data);
+      setMovie(data.results[
+        Math.floor(Math.random() * data.results.length - 1)
+      ])
+    } )
+  }, []);
+
+  const truncate = (string,n) => {
+    return string?.length > n ? string.substr(0,n - 1) + '...' : string
+}
+
+
   return <div className="banner"style={{
     backgroundSize: "cover",
-    backgroundImage: `url("https://cdn.vox-cdn.com/thumbor/sRl-1JpnLQXnzKcagKPp7Q88TdY=/0x822:1500x1684/1200x800/filters:focal(630x1237:870x1477)/cdn.vox-cdn.com/uploads/chorus_image/image/55661103/ST2_Vertical_Main_PRE_US.0.jpg")`,
+    paddingTop: "10rem",
+    backgroundImage: `url("https://image.tmdb.org/t/p/original/${movie?.backdrop_path}")`,
   backgroundPosition: "center center",
 
   }}>
       <div className="banner__contents">
-        {/* <img className="movie__banner" src="https://static-prod.adweek.com/wp-content/uploads/2019/05/Billelis_Lionsgate_John_Wick_3_Parabellum_Illustration_Official.jpg" alt="" /> */}
+    
         <div className="movie__contents">
-          <h1>Stranger Things</h1>
-          <p className="description">Interstellar reunion is a 2017 British-American second epic science fiction ksnsljk/dnsjksdjshjdjhd
+          <h1>{movie?.name || movie?.title}</h1>
+          <p className="description">  {truncate(`${movie?.overview}`, 150)}
            </p>
 
            <div style={{
              display:"flex",
-             justifyContent: "space-between",
+            //  justifyContent: "space-between",
+            gap: 10,
              marginBottom: "1rem",
              maxWidth: "30rem",
              fontWeight:"bolder"
@@ -35,10 +60,6 @@ const Banner = () => {
              alignItems: "center"
            }}>
            <button className="trailerButton"> <FontAwesomeIcon style={{color: "red"}} icon={faPlay}/> Watch trailer</button>
-           {/* <p style={{
-             fontSize: "20px",
-            cursor: "pointer"
-           }}>Read more</p> */}
            </div>
         </div>
       </div>

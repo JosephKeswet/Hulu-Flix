@@ -6,7 +6,9 @@ const BottomNav = () => {
   return <div>
       <div className="bottomNav" style={{
           display: "flex",
-          justifyContent: "space-between",
+        //   justifyContent: "space-between",
+          gap:50,
+          flexWrap: "wrap",
           color: "white",
           padding: "1.5rem",
           fontFamily: "cursive",
@@ -15,17 +17,19 @@ const BottomNav = () => {
        
 
       }}>
-          <div>All formats <FontAwesomeIcon icon={faAngleDown} /> </div>
-          <div>By Date <FontAwesomeIcon icon={faAngleDown} /></div>
-          <div>By Category <FontAwesomeIcon icon={faAngleDown} /></div>
-          <div>Coming Soon</div>
+          <div style={{cursor: "pointer"}}>All formats <FontAwesomeIcon icon={faAngleDown} /> </div>
+          <div style={{cursor: "pointer"}}>By Date <FontAwesomeIcon icon={faAngleDown} /></div>
+          <div style={{cursor: "pointer"}}>By Category <FontAwesomeIcon icon={faAngleDown} /></div>
+          <div style={{cursor: "pointer"}}>Coming Soon</div>
           <div> <input type="text" style={{
               width: "30rem",
               border: "none",
               borderBottom: "1px solid white",
               backgroundColor: "#121212",
+              color: "white",
               outline: "none",
               fontSize: "1.3rem",
+              marginLeft: "350px"
             
           }}
           placeholder={"Search by name..."}

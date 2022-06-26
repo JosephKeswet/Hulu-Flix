@@ -3,12 +3,12 @@ import './Nav.css'
 
 const Nav = () => {
   return <div className="nav">
-      <div className="nav__contents" >
+      <div className="nav__contents">
         
 
         <img 
             className="logo"
-            src="https://download.logo.wine/logo/Netflix/Netflix-Logo.wine.png" alt="" />
+            src="http://assets.stickpng.com/images/58480a75cef1014c0b5e491b.png" alt="" />
                             
                 <img 
                className="avatar"    
